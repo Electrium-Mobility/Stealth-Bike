@@ -1,7 +1,7 @@
 #include "oled.h"
 
 
-
+// displays the battery level on the display
 void showBatteryLevel(uint8_t percent, uint8_t speed, U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2)
 {
     uint8_t width;
@@ -57,6 +57,7 @@ void showBatteryLevel(uint8_t percent, uint8_t speed, U8G2_SSD1306_128X64_NONAME
             offset += 3;
         }
     }
+
 //speedometer code
 
       u8g2.drawBox(31,70,4,4);
@@ -129,6 +130,7 @@ void showBatteryLevel(uint8_t percent, uint8_t speed, U8G2_SSD1306_128X64_NONAME
     u8g2.sendBuffer();
 }
 
+// displays the battery percentage on the display
 void ShowBatteryPercent(uint8_t percent, U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2){
   char cstr[16];
   itoa(percent, cstr, 10);
@@ -151,6 +153,7 @@ void ShowBatteryPercent(uint8_t percent, U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g
   delay(1);
 }
 
+// displays the speed on the display
 void iShowSpeed(uint8_t speed, U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2){
   char cstr[16];
   itoa(speed, cstr, 10);
