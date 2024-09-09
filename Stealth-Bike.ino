@@ -44,7 +44,7 @@ void setup() {
 
 
 void loop() {
-  prevOutput = currentOutput;
+  prevOutput = currentOutput; // updates previous current value
   /** Call the function getVescValues() to acquire data from VESC */
   if ( vesc.getVescValues() ) {
     speed = (uint8_t)((vesc.data.rpm) * WHEEL_CIRCUMFERENCE * 60/23000); // calculate speed based on rpm
